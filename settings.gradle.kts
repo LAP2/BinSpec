@@ -1,1 +1,1 @@
-rootProject.name = "BinSpec"
+rootProject.name = "binspec"
