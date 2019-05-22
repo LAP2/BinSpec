@@ -2,7 +2,6 @@ package org.karch.parsing.specification.dsl.implementation
 
 import org.karch.parsing.specification.dsl.domain.BinaryField
 import org.karch.parsing.specification.dsl.domain.DependentOffsetConstantSizeBinaryField
-import org.karch.parsing.specification.Interner
 import org.karch.parsing.specification.dsl.ConstantSizeBinaryFieldSpecificationContext
 import org.karch.parsing.specification.dsl.domain.offsetCalculator
 
