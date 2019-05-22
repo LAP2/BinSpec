@@ -1,9 +1,7 @@
 package org.karch.parsing.specification.dsl
 
-import org.karch.parsing.specification.Interner
 import org.karch.parsing.specification.dsl.domain.*
 import org.karch.parsing.specification.dsl.implementation.BinaryEntrySpecificationContextImpl
-import org.karch.parsing.specification.mapInterner
 
 //============================================== Specification =======================================================//
 
@@ -39,7 +37,7 @@ interface FullBinaryFieldSpecificationContext :
         VariableSizeBinaryFieldSpecificationContext,
         ConstantSizeBinaryFieldSpecificationContext
 
-internal fun binaryEntrySpecification(
+fun binaryEntrySpecification(
         contextConfiguration: BinaryEntrySpecificationContextConfiguration
 ): BinaryEntrySpecification {
     val fields = HashMap<String, BinaryField>()
