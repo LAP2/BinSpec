@@ -5,6 +5,7 @@ import java.nio.ByteBuffer
 import java.nio.ByteBuffer.allocate
 import java.nio.ByteOrder.LITTLE_ENDIAN
 import java.nio.channels.AsynchronousFileChannel
+import java.util.*
 
 sealed class BinaryField
 
@@ -144,6 +145,15 @@ class DefaultMappings private constructor() {
             val buffer = allocate(size).order(LITTLE_ENDIAN)
             channel.aRead(buffer, offsetOf(binaryFieldId))
             String(buffer.rewind().array())
+        }
+
+        @JvmStatic
+        val defaultBitSetMapping : BinaryFieldMapping<BitSet> = {
+            channel, binaryFieldId ->
+            val size = sizeOf(binaryFieldId).toInt()
+            val buffer = allocate(size).order(LITTLE_ENDIAN)
+            channel.aRead(buffer, offsetOf(binaryFieldId))
+            BitSet.valueOf(buffer)
         }
 
     }

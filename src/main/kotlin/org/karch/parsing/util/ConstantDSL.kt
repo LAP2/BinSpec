@@ -1,10 +1,10 @@
 package org.karch.parsing.util
 
-internal interface ConstantSpecificationContext<TypeOfConstant : Number> {
+interface ConstantSpecificationContext<TypeOfConstant : Number> {
     infix fun String.size(size: TypeOfConstant)
 }
 
-internal class IntegerConstantSpecificationContext(
+class IntegerConstantSpecificationContext(
         var result: Int
 ) : ConstantSpecificationContext<Int> {
 
@@ -14,7 +14,7 @@ internal class IntegerConstantSpecificationContext(
 
 }
 
-internal fun constant(
+fun constant(
         specificationBlock: ConstantSpecificationContext<Int>.()->Unit
 ): Int {
     val context = IntegerConstantSpecificationContext(0)
